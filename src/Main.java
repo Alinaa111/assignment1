@@ -24,6 +24,8 @@ public class Main {
             }
         }
 
+        System.out.println("Thank you for using the program");
+
         scanner.close();
     }
 
@@ -67,6 +69,18 @@ public class Main {
             System.out.println("Time taken: " + duration + " milliseconds");
         }
 
+        if (choice == 3) {
+            System.out.println("PROBLEM 3\n" + "Enter any number:");
+            int n = scanner.nextInt();
+
+            double startTime = System.nanoTime();
+            String res = (isPrimeOrComposite(n) == 1) ? "Prime" : "Composite";
+            double endTime = System.nanoTime();
+            double duration = (endTime - startTime) / 1000000;
+
+            System.out.println("The number is: " + res);
+            System.out.println("Time taken: " + duration + " milliseconds");
+        }
 
     }
 
@@ -81,7 +95,6 @@ public class Main {
     @param arr The array that would be iterated
     @return minimum element of the given array
      */
-
     public static int minOfArray(ArrayList<Integer> arr) {
         int min = Integer.MAX_VALUE;
         for (int num : arr) {
@@ -110,5 +123,29 @@ public class Main {
         }
 
         return summ / arr.size();
+    }
+
+
+
+    /*
+    Problem 3
+    This method checks if the given number is prime or composite
+    It uses for loop
+    Time complexity: O(n), n is input number
+    For loop iterates through 2 to number itself
+
+    @param n The number that is checked
+    @return 1 or 0, depending on count
+     */
+    public static int isPrimeOrComposite(int n) {
+        int count = 0;
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
+                count++;
+            }
+        }
+
+        if (count == 0) return 1;
+        else return 0;
     }
 }
