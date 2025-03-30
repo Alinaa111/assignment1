@@ -122,6 +122,24 @@ public class Main {
             System.out.println("Time taken: " + duration + " milliseconds");
         }
 
+        if (choice == 7) {
+            System.out.println("PROBLEM 7\n" + "Enter n and array of this n elements:");
+            int n = scanner.nextInt();
+            ArrayList<Integer> arr = new ArrayList<Integer>();
+
+            for (int i = 0; i < n; i++) {
+                arr.add(scanner.nextInt());
+            }
+
+            System.out.println("The reverse array is: ");
+            double startTime = System.nanoTime();
+            reverseArray(n-1, arr);
+            double endTime = System.nanoTime();
+            double duration = (endTime - startTime) / 1000000;
+
+            System.out.println("Time taken: " + duration + " milliseconds");
+        }
+
     }
 
 
@@ -239,5 +257,23 @@ public class Main {
     public static int power(int a, int n) {
         if (n == 0) return 1;
         else return a * power(a, n - 1);
+    }
+
+
+
+    /*
+    Problem 7
+    This method reverses array
+    It uses recursive approach
+    Time complexity: 0(n), n and n numbers as input.
+    The recursive algorithm iterates through all numbers from n to resulting in linear time complexity.
+
+    @param n-1, array The number n-1 is index
+    @return sout reversed array
+     */
+    public static void reverseArray(int index, ArrayList<Integer> arr) {
+        if (index < 0) return;
+        System.out.println(arr.get(index) + " ");
+        reverseArray(index - 1, arr);
     }
 }
