@@ -108,6 +108,20 @@ public class Main {
             System.out.println("Time taken: " + duration + " milliseconds");
         }
 
+        if (choice == 6) {
+            System.out.println("PROBLEM 6\n" + "Enter 2 numbers (a and n):");
+            int a = scanner.nextInt();
+            int n = scanner.nextInt();
+
+            double startTime = System.nanoTime();
+            int res = power(a, n);
+            double endTime = System.nanoTime();
+            double duration = (endTime - startTime) / 1000000;
+
+            System.out.println("The power of " + a + " to " + n + " is: " + res);
+            System.out.println("Time taken: " + duration + " milliseconds");
+        }
+
     }
 
 
@@ -201,12 +215,29 @@ public class Main {
     The recursive algorithm iterates through all numbers from n to resulting in linear time complexity.
 
     @param n The number is nth element in sequence
-    @return The factorial of the given number
+    @return The fibonacci number of the given number
      */
     public static int calculateFib(int n) {
         if(n == 1 || n == 0){
             return n;
         }
         return  calculateFib(n-1) + calculateFib(n-2);
+    }
+
+
+
+    /*
+    Problem 6
+    This method finds the power of a to n
+    It uses recursive approach
+    Time complexity: 0(n), where n is the input number.
+    The recursive algorithm iterates through all numbers from n to resulting in linear time complexity.
+
+    @param a, n The number a is powered to number n
+    @return The power a^n
+     */
+    public static int power(int a, int n) {
+        if (n == 0) return 1;
+        else return a * power(a, n - 1);
     }
 }
