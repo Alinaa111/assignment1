@@ -140,6 +140,20 @@ public class Main {
             System.out.println("Time taken: " + duration + " milliseconds");
         }
 
+
+        if (choice == 8) {
+            System.out.println("PROBLEM 8\n" + "Write some string:");
+            String str = scanner.nextLine();
+
+            double startTime = System.nanoTime();
+            String res = (isAllDigits(str, 0) == 1) ? "Yes" : "No";
+            double endTime = System.nanoTime();
+            double duration = (endTime - startTime) / 1000000;
+
+            System.out.println(res);
+            System.out.println("Time taken: " + duration + " milliseconds");
+        }
+
     }
 
 
@@ -275,5 +289,23 @@ public class Main {
         if (index < 0) return;
         System.out.println(arr.get(index) + " ");
         reverseArray(index - 1, arr);
+    }
+
+
+
+    /*
+    Problem 8
+    This method check if String consists only of digits
+    It uses recursive approach
+    Time complexity: 0(n)
+    It iterates through the string
+
+    @param str, index The str is set of elements without space that would be checked and index is every element
+    @return true or false
+     */
+    public static int isAllDigits(String str, int index) {
+        if (index == str.length()) return 1;
+        if (!Character.isDigit(str.charAt(index))) return 0;
+        return isAllDigits(str, index + 1);
     }
 }
