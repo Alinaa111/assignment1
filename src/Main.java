@@ -154,6 +154,22 @@ public class Main {
             System.out.println("Time taken: " + duration + " milliseconds");
         }
 
+
+
+        if (choice == 10) {
+            System.out.println("PROBLEM 10\n" + "Enter 2 numbers (a and b):");
+            int a = scanner.nextInt();
+            int b = scanner.nextInt();
+
+            double startTime = System.nanoTime();
+            int res = gcd(a, b);
+            double endTime = System.nanoTime();
+            double duration = (endTime - startTime) / 1000000;
+
+            System.out.println("GCD(" + a + ", " + b + ") " +  "is: " + res);
+            System.out.println("Time taken: " + duration + " milliseconds");
+        }
+
     }
 
 
@@ -307,5 +323,22 @@ public class Main {
         if (index == str.length()) return 1;
         if (!Character.isDigit(str.charAt(index))) return 0;
         return isAllDigits(str, index + 1);
+    }
+
+
+
+    /*
+    Problem 10
+    This method finds GCD(a, b)
+    It uses recursive approach
+    Time complexity: 0(log min(a, b)), a and b as inputs
+    It uses Euclidean algorithm
+
+    @param a, b The numbers for calculation
+    @return gcd of numbers
+     */
+    public static int gcd(int a, int b) {
+        if (b == 0) return a;
+        return gcd(b, a % b);
     }
 }
