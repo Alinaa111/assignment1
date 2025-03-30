@@ -185,7 +185,7 @@ public class Main {
     }
 
 
-    /**
+    /*
     Problem 1
     This method takes array and returns its minimum element
     It uses for loop
@@ -227,7 +227,7 @@ public class Main {
 
 
 
-    /**
+    /*
     Problem 3
     This method checks if the given number is prime or composite
     It uses for loop
@@ -250,7 +250,7 @@ public class Main {
     }
 
 
-    /**
+    /*
     Problem 4
     This method calculates the factorial of a given number
     It uses recursive approach
@@ -267,7 +267,7 @@ public class Main {
 
 
 
-    /**
+    /*
     Problem 5
     This method finds n-th elements in Fibonacci sequence
     It uses recursive approach
@@ -286,7 +286,7 @@ public class Main {
 
 
 
-    /**
+    /*
     Problem 6
     This method finds the power of a to n
     It uses recursive approach
@@ -303,14 +303,15 @@ public class Main {
 
 
 
-    /**
+    /*
     Problem 7
     This method reverses array
     It uses recursive approach
     Time complexity: 0(n), n and n numbers as input.
     The recursive algorithm iterates through all numbers from n to resulting in linear time complexity.
 
-    @param index, array The number n-1 is index of arr
+    @param n-1, array The number n-1 is index
+    @return sout reversed array
      */
     public static void reverseArray(int index, ArrayList<Integer> arr) {
         if (index < 0) return;
@@ -320,7 +321,7 @@ public class Main {
 
 
 
-    /**
+    /*
     Problem 8
     This method check if String consists only of digits
     It uses recursive approach
@@ -338,7 +339,7 @@ public class Main {
 
 
 
-    /**
+    /*
     Problem 9
     This method finds C(n, k) binomial coefficient by formula
     It uses recursive approach
@@ -354,7 +355,7 @@ public class Main {
 
 
 
-    /**
+    /*
     Problem 10
     This method finds GCD(a, b)
     It uses recursive approach
