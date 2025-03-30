@@ -89,7 +89,7 @@ public class Main {
     Problem 1
     This method takes array and returns its minimum element
     It uses for loop
-    Time complexity:
+    Time complexity: O(n), n is size of array
     It iterates through array and finds min
 
     @param arr The array that would be iterated
@@ -110,7 +110,7 @@ public class Main {
     Problem 2
     This method takes array and returns its average
     It uses for loop
-    Time complexity:
+    Time complexity: O(n), n is size of array
     It iterates through array, summarize elements and divides it by array size
 
     @param arr The array that would be iterated
@@ -147,5 +147,22 @@ public class Main {
 
         if (count == 0) return 1;
         else return 0;
+    }
+
+
+    /*
+    Problem 4
+    This method calculates the factorial of a given number
+    It uses recursive approach
+    Time complexity: 0(n), where n is the input number.
+    The recursive algorithm iterates through all numbers from n to
+    resulting in linear time complexity.
+
+    @param n The number for which the factorial is to be calculated.
+    @return The factorial of the given number
+     */
+    public static int factorial(int n) {
+        if (n == 1 || n == 0) return 1;
+        else return n * factorial(n - 1);
     }
 }
