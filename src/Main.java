@@ -82,6 +82,32 @@ public class Main {
             System.out.println("Time taken: " + duration + " milliseconds");
         }
 
+        if (choice == 4) {
+            System.out.println("PROBLEM 4\n" + "Enter any number:");
+            int n = scanner.nextInt();
+
+            double startTime = System.nanoTime();
+            int res = factorial(n);
+            double endTime = System.nanoTime();
+            double duration = (endTime - startTime) / 1000000;
+
+            System.out.println("The factorial of number is: " + res);
+            System.out.println("Time taken: " + duration + " milliseconds");
+        }
+
+        if (choice == 5) {
+            System.out.println("PROBLEM 5\n" + "Enter any number:");
+            int n = scanner.nextInt();
+
+            double startTime = System.nanoTime();
+            int res = calculateFib(n);
+            double endTime = System.nanoTime();
+            double duration = (endTime - startTime) / 1000000;
+
+            System.out.println("The fibonacci number is: " + res);
+            System.out.println("Time taken: " + duration + " milliseconds");
+        }
+
     }
 
 
@@ -155,8 +181,7 @@ public class Main {
     This method calculates the factorial of a given number
     It uses recursive approach
     Time complexity: 0(n), where n is the input number.
-    The recursive algorithm iterates through all numbers from n to
-    resulting in linear time complexity.
+    The recursive algorithm iterates through all numbers from n to resulting in linear time complexity.
 
     @param n The number for which the factorial is to be calculated.
     @return The factorial of the given number
@@ -164,5 +189,24 @@ public class Main {
     public static int factorial(int n) {
         if (n == 1 || n == 0) return 1;
         else return n * factorial(n - 1);
+    }
+
+
+
+    /*
+    Problem 5
+    This method finds n-th elements in Fibonacci sequence
+    It uses recursive approach
+    Time complexity: 0(n), where n is the input number.
+    The recursive algorithm iterates through all numbers from n to resulting in linear time complexity.
+
+    @param n The number is nth element in sequence
+    @return The factorial of the given number
+     */
+    public static int calculateFib(int n) {
+        if(n == 1 || n == 0){
+            return n;
+        }
+        return  calculateFib(n-1) + calculateFib(n-2);
     }
 }
