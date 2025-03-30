@@ -154,7 +154,19 @@ public class Main {
             System.out.println("Time taken: " + duration + " milliseconds");
         }
 
+        if (choice == 9) {
+            System.out.println("PROBLEM 9\n" + "Enter 2 numbers (n and k):");
+            int n = scanner.nextInt();
+            int k = scanner.nextInt();
 
+            double startTime = System.nanoTime();
+            int res = binomialCoefficient(n, k);
+            double endTime = System.nanoTime();
+            double duration = (endTime - startTime) / 1000000;
+
+            System.out.println("Binomial Coefficient of " + n + " and " + k + " is: " + res);
+            System.out.println("Time taken: " + duration + " milliseconds");
+        }
 
         if (choice == 10) {
             System.out.println("PROBLEM 10\n" + "Enter 2 numbers (a and b):");
@@ -323,6 +335,22 @@ public class Main {
         if (index == str.length()) return 1;
         if (!Character.isDigit(str.charAt(index))) return 0;
         return isAllDigits(str, index + 1);
+    }
+
+
+
+    /*
+    Problem 9
+    This method finds C(n, k) binomial coefficient by formula
+    It uses recursive approach
+    Time complexity: 0(2^n), n is input
+
+    @param n, k The numbers for calculation
+    @return binomial coefficient
+     */
+    public static int binomialCoefficient(int n, int k) {
+        if (k == 0 || k == n) return 1;
+        return binomialCoefficient(n - 1, k - 1) + binomialCoefficient(n - 1, k);
     }
 
 
