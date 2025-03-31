@@ -34,39 +34,28 @@ public class Main {
         if (choice == 1) {
             System.out.println("PROBLEM 1:\n" + "Enter n and array of this n elements:");
 
-            int n = scanner.nextInt();
-            ArrayList<Integer> arr = new ArrayList<Integer>();
-
-            for (int i = 0; i < n; i++) {
-                arr.add(scanner.nextInt());
-            }
+            ArrayList<Integer> arr = readArray(scanner);
 
 
             double startTime = System.nanoTime();
             int res = minOfArray(arr);
             double endTime = System.nanoTime();
-            double duration = (endTime - startTime) / 1000000;
+
             System.out.println("The minimum element of array is: " + res);
-            System.out.println("Time taken: " + duration + " milliseconds");
+            printExecutionTime(startTime, endTime);
         }
 
         if (choice == 2) {
             System.out.println("PROBLEM 2\n" + "Enter n and array of this n elements:");
 
-            int n = scanner.nextInt();
-            ArrayList<Integer> arr = new ArrayList<Integer>();
-
-            for (int i = 0; i < n; i++) {
-                arr.add(scanner.nextInt());
-            }
-
+            ArrayList<Integer> arr = readArray(scanner);
 
             double startTime = System.nanoTime();
             double res = avgOfArray(arr);
             double endTime = System.nanoTime();
-            double duration = (endTime - startTime) / 1000000;
+
             System.out.println("The average number of array is: " + res);
-            System.out.println("Time taken: " + duration + " milliseconds");
+            printExecutionTime(startTime, endTime);
         }
 
         if (choice == 3) {
@@ -76,10 +65,9 @@ public class Main {
             double startTime = System.nanoTime();
             String res = (isPrimeOrComposite(n) == 1) ? "Prime" : "Composite";
             double endTime = System.nanoTime();
-            double duration = (endTime - startTime) / 1000000;
 
             System.out.println("The number is: " + res);
-            System.out.println("Time taken: " + duration + " milliseconds");
+            printExecutionTime(startTime, endTime);
         }
 
         if (choice == 4) {
@@ -89,10 +77,9 @@ public class Main {
             double startTime = System.nanoTime();
             int res = factorial(n);
             double endTime = System.nanoTime();
-            double duration = (endTime - startTime) / 1000000;
 
             System.out.println("The factorial of number is: " + res);
-            System.out.println("Time taken: " + duration + " milliseconds");
+            printExecutionTime(startTime, endTime);
         }
 
         if (choice == 5) {
@@ -102,10 +89,9 @@ public class Main {
             double startTime = System.nanoTime();
             int res = calculateFib(n);
             double endTime = System.nanoTime();
-            double duration = (endTime - startTime) / 1000000;
 
             System.out.println("The fibonacci number is: " + res);
-            System.out.println("Time taken: " + duration + " milliseconds");
+            printExecutionTime(startTime, endTime);
         }
 
         if (choice == 6) {
@@ -116,10 +102,9 @@ public class Main {
             double startTime = System.nanoTime();
             int res = power(a, n);
             double endTime = System.nanoTime();
-            double duration = (endTime - startTime) / 1000000;
 
             System.out.println("The power of " + a + " to " + n + " is: " + res);
-            System.out.println("Time taken: " + duration + " milliseconds");
+            printExecutionTime(startTime, endTime);
         }
 
         if (choice == 7) {
@@ -131,13 +116,12 @@ public class Main {
                 arr.add(scanner.nextInt());
             }
 
-            System.out.println("The reverse array is: ");
+            System.out.println("The reversed array is: ");
             double startTime = System.nanoTime();
             reverseArray(n-1, arr);
             double endTime = System.nanoTime();
-            double duration = (endTime - startTime) / 1000000;
 
-            System.out.println("Time taken: " + duration + " milliseconds");
+            printExecutionTime(startTime, endTime);
         }
 
 
@@ -148,10 +132,9 @@ public class Main {
             double startTime = System.nanoTime();
             String res = (isAllDigits(str, 0) == 1) ? "Yes" : "No";
             double endTime = System.nanoTime();
-            double duration = (endTime - startTime) / 1000000;
 
             System.out.println(res);
-            System.out.println("Time taken: " + duration + " milliseconds");
+            printExecutionTime(startTime, endTime);
         }
 
         if (choice == 9) {
@@ -162,10 +145,9 @@ public class Main {
             double startTime = System.nanoTime();
             int res = binomialCoefficient(n, k);
             double endTime = System.nanoTime();
-            double duration = (endTime - startTime) / 1000000;
 
             System.out.println("Binomial Coefficient of " + n + " and " + k + " is: " + res);
-            System.out.println("Time taken: " + duration + " milliseconds");
+            printExecutionTime(startTime, endTime);
         }
 
         if (choice == 10) {
@@ -176,12 +158,26 @@ public class Main {
             double startTime = System.nanoTime();
             int res = gcd(a, b);
             double endTime = System.nanoTime();
-            double duration = (endTime - startTime) / 1000000;
 
             System.out.println("GCD(" + a + ", " + b + ") " +  "is: " + res);
-            System.out.println("Time taken: " + duration + " milliseconds");
+            printExecutionTime(startTime, endTime);
         }
 
+    }
+
+
+    public static ArrayList<Integer> readArray(Scanner scanner) {
+        int n = scanner.nextInt();
+        ArrayList<Integer> arr = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            arr.add(scanner.nextInt());
+        }
+        return arr;
+    }
+
+    public static void printExecutionTime(double startTime, double endTime) {
+        double duration = (endTime - startTime) / 1000000;
+        System.out.println("Time taken: " + duration + " milliseconds");
     }
 
 
