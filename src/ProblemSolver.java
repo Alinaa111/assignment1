@@ -81,18 +81,15 @@ public class ProblemSolver {
 
         if (choice == 7) {
             System.out.println("PROBLEM 7\n" + "Enter n and array of this n elements:");
-            int n = scanner.nextInt();
-            ArrayList<Integer> arr = new ArrayList<Integer>();
 
-            for (int i = 0; i < n; i++) {
-                arr.add(scanner.nextInt());
-            }
+            ArrayList<Integer> arr = InputHandler.readArray(scanner);
 
             System.out.println("The reversed array is: ");
             double startTime = System.nanoTime();
-            reverseArray(n-1, arr);
+            reverseArray(arr.size()-1, arr);
             double endTime = System.nanoTime();
 
+            System.out.print("\n");
             InputHandler.printExecutionTime(startTime, endTime);
         }
 
@@ -144,6 +141,7 @@ public class ProblemSolver {
      It uses for loop
      Time complexity: O(n), n is size of array
      It iterates through array and finds min
+     Linear complexity type
 
      @param arr The array that would be iterated
      @return minimum element of the given array
@@ -165,6 +163,7 @@ public class ProblemSolver {
      It uses for loop
      Time complexity: O(n), n is size of array
      It iterates through array, summarize elements and divides it by array size
+     Linear complexity type
 
      @param arr The array that would be iterated
      @return The average number of the given array
@@ -187,6 +186,7 @@ public class ProblemSolver {
      Time complexity: O(n), n is input number
      For loop iterates through 2 to number itself
 
+     Linear complexity type
      @param n The number that is checked
      @return 1 or 0, depending on count
      */
@@ -267,7 +267,7 @@ public class ProblemSolver {
      */
     public static void reverseArray(int index, ArrayList<Integer> arr) {
         if (index < 0) return;
-        System.out.println(arr.get(index) + " ");
+        System.out.print(arr.get(index) + " ");
         reverseArray(index - 1, arr);
     }
 
@@ -279,9 +279,10 @@ public class ProblemSolver {
      It uses recursive approach
      Time complexity: 0(n)
      It iterates through the string
+     Linear complexity type
 
      @param str, index The str is set of elements without space that would be checked and index is every element
-     @return true or false
+     @return 1 or 0 (true or false)
      */
     public static int isAllDigits(String str, int index) {
         if (index == str.length()) return 1;
@@ -296,6 +297,7 @@ public class ProblemSolver {
      This method finds C(n, k) binomial coefficient by formula
      It uses recursive approach
      Time complexity: 0(2^n), n is input
+     The Method is resulting in exponential complexity
 
      @param n, k The numbers for calculation
      @return binomial coefficient
@@ -313,6 +315,7 @@ public class ProblemSolver {
      It uses recursive approach
      Time complexity: 0(log min(a, b)), a and b as inputs
      It uses Euclidean algorithm
+     Logarithmic complexity type
 
      @param a, b The numbers for calculation
      @return gcd of numbers
