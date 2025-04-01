@@ -22,7 +22,7 @@ Includes helper functions like printExecutionTime.
 #### ProblemController
 Contains executeProblem method with if statements to check user choice.
 
-Implements all 10 problem-solving methods
+Implements all 10 problem-solving methods. Some of them (4-10) use recursive. Methods contain different types of time complexities, like mostly linear, exponential and logarithmic
 
 
 
